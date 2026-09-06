@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+html { scroll-behavior: smooth; }
+body { background: #0a1f0a; }
+::selection { background: rgba(212, 175, 55, .3); color: #fff; }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #0a1f0a; }
+::-webkit-scrollbar-thumb { background: #4a7c59; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #d4af37; }
+
+@layer components {
+  .z-section { @apply relative z-10 mx-auto max-w-6xl px-6 py-24; }
+  .z-btn-primary { @apply inline-flex items-center justify-center rounded-xl bg-gold px-7 py-3.5 text-sm font-semibold text-olive-900 transition-all hover:-translate-y-0.5 hover:bg-gold-light; }
+  .z-btn-outline { @apply inline-flex items-center justify-center rounded-xl border border-gold/40 px-7 py-3.5 text-sm font-semibold text-gold transition-all hover:bg-gold/10; }
+  .glass { @apply border border-white/10 bg-white/[0.04] backdrop-blur-md; }
+  .eyebrow { @apply mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-gold; }
+}
+
+* { border-color: rgba(255,255,255,.1); }
