@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowDown, ArrowRight, Check, Copy, ExternalLink, Leaf, Menu, ShieldCheck, Users, X } from "lucide-react";
+import { ArrowDown, ArrowRight, Check, Copy, ExternalLink, Leaf, Mail, Menu, MessageCircle, ShieldCheck, Users, X } from "lucide-react";
 import { useState } from "react";
 
 const CONTRACT = "0x652BCA0b212D133490b5736781FA847318841230";
@@ -56,7 +56,16 @@ export function Whitepaper() {
 }
 
 export function Contact() {
-  return <section id="contact" className="z-section"><div className="grid items-center gap-10 lg:grid-cols-[1fr_.8fr]"><Reveal><p className="eyebrow">İletişim ve topluluk</p><h2 className="font-serif text-4xl sm:text-5xl">Gerçek sorular, <span className="text-gold">açık iletişim.</span></h2><p className="mt-5 max-w-xl leading-7 text-white/60">Proje geliştirme aşamasındadır. İş birlikleri, sorular ve geri bildirimler için yalnızca resmî iletişim kanallarını kullanın.</p><div className="mt-8 space-y-4 text-sm"><a className="flex items-center justify-between border-b pb-4 text-white/70 hover:text-gold" href="mailto:tokmakcisames@gmail.com">E-posta <span>tokmakcisames@gmail.com</span></a><a className="flex items-center justify-between border-b pb-4 text-white/70 hover:text-gold" href="https://t.me/Samed1981" target="_blank" rel="noreferrer">Telegram <span>@Samed1981</span></a><a className="flex items-center justify-between text-white/70 hover:text-gold" href="https://www.instagram.com/tokmakcisamet" target="_blank" rel="noreferrer">Instagram <span>@tokmakcisamet</span></a></div></Reveal><Reveal className="relative overflow-hidden rounded-3xl border border-gold/20"><Image src="/assets/net-profit-model.png" alt="ZEYTİNDALI net kâr modeli ve üretimden doğan sosyal fayda" width={1200} height={900} className="h-full min-h-[330px] w-full object-cover" /><div className="absolute inset-0 bg-gradient-to-t from-olive-900/85 to-transparent" /><p className="absolute bottom-6 left-6 right-6 font-serif text-2xl text-white">Üretimden doğan değer, insanlığa dokunsun.</p></Reveal></div></section>;
+  const channels = [
+    { label: "E-posta", value: "zeytindalibzyt@gmail.com", href: "mailto:zeytindalibzyt@gmail.com", icon: <Mail size={18} /> },
+    { label: "WhatsApp", value: "Mesaj gönder", href: "https://wa.me/905442027406?text=Merhaba%20ZEYT%C4%B0NDALI%20BZYT%20projesi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.", icon: <MessageCircle size={18} /> },
+    { label: "X", value: "@ZeytindaliBZYT", href: "https://x.com/ZeytindaliBZYT", icon: <X size={18} /> },
+    { label: "YouTube", value: "@zeytindaliBzyt", href: "https://www.youtube.com/@zeytindaliBzyt", icon: <ExternalLink size={18} /> },
+    { label: "LinkedIn", value: "Abdusselam Tokmakçı", href: "https://www.linkedin.com/in/abdusselam-tokmak%C3%A7i-940536417/", icon: <ExternalLink size={18} /> },
+    { label: "Telegram", value: "@Samed1981", href: "https://t.me/Samed1981", icon: <MessageCircle size={18} /> },
+    { label: "Instagram", value: "@tokmakcisamet", href: "https://www.instagram.com/tokmakcisamet", icon: <MessageCircle size={18} /> },
+  ];
+  return <section id="contact" className="z-section"><div className="grid items-center gap-10 lg:grid-cols-[1fr_.9fr]"><Reveal><p className="eyebrow">İletişim ve topluluk</p><h2 className="font-serif text-4xl sm:text-5xl">Gerçek sorular, <span className="text-gold">açık iletişim.</span></h2><p className="mt-5 max-w-xl leading-7 text-white/60">Proje geliştirme aşamasındadır. İş birlikleri, sorular ve geri bildirimler için yalnızca resmî iletişim kanallarını kullanın.</p><div className="mt-8 grid gap-3 sm:grid-cols-2">{channels.map((channel) => <a key={channel.label} className="group flex items-center gap-3 rounded-xl border border-white/10 bg-white/[.03] px-4 py-3 text-white/70 transition hover:-translate-y-0.5 hover:border-gold/40 hover:text-gold" href={channel.href} target={channel.href.startsWith("http") ? "_blank" : undefined} rel={channel.href.startsWith("http") ? "noreferrer" : undefined}><span className="text-gold">{channel.icon}</span><span className="min-w-0"><span className="block text-[11px] uppercase tracking-widest text-white/40">{channel.label}</span><span className="block truncate text-sm">{channel.value}</span></span><ExternalLink size={13} className="ml-auto shrink-0 opacity-40 transition group-hover:opacity-100" /></a>)}</div></Reveal><Reveal className="relative overflow-hidden rounded-3xl border border-gold/20"><Image src="/assets/net-profit-model.png" alt="ZEYTİNDALI net kâr modeli ve üretimden doğan sosyal fayda" width={1200} height={900} className="h-full min-h-[330px] w-full object-cover" /><div className="absolute inset-0 bg-gradient-to-t from-olive-900/85 to-transparent" /><p className="absolute bottom-6 left-6 right-6 font-serif text-2xl text-white">Üretimden doğan değer, insanlığa dokunsun.</p></Reveal></div></section>;
 }
 
 export function TokenInfo() {
