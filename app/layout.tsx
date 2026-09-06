@@ -65,7 +65,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       </head>
-      <body className="bg-olive-900 font-sans text-gray-100 antialiased">{children}</body>
+      <body className="bg-olive-900 font-sans text-gray-100 antialiased">
+        {children}
+        <script src="//code.jivosite.com/widget/MJfedssMfO" async />
+      </body>
     </html>
   );
 }
