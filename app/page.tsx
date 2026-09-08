@@ -1,4 +1,4 @@
-import { About, BubbleBackground, Contact, Footer, Hero, LaunchNotice, Navbar, Roadmap, System, TokenInfo, Transparency, Whitepaper } from "@/components/sections";
+import { About, BubbleBackground, Contact, Footer, Hero, LaunchNotice, Manifesto, Navbar, Roadmap, System, TokenInfo, Transparency, Whitepaper } from "@/components/sections";
 
 export default function Home() {
   return (
@@ -8,6 +8,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
+      <Manifesto />
       <System />
       <Transparency />
       <Roadmap />
